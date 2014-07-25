@@ -11,7 +11,7 @@ set -x
 TOPDIR=`dirname $( readlink -f $0 )`
 FPM="fpm"
 
-# unpack packer
+# download deb we intend to convert
 wget http://ppa.launchpad.net/zabuch/ppa/ubuntu/pool/main/m/${NAME}/${NAME}_${VERSION}_all.deb
 
 # create rpm package
