@@ -12,10 +12,10 @@ TOPDIR=`dirname $( readlink -f $0 )`
 FPM="fpm"
 
 # download deb we intend to convert
-# wget http://ppa.launchpad.net/zabuch/ppa/ubuntu/pool/main/m/${NAME}/${NAME}_${VERSION}_all.deb
+wget http://ppa.launchpad.net/zabuch/ppa/ubuntu/pool/main/m/${NAME}/${NAME}_${VERSION}_all.deb
 
 # create rpm package
 ${FPM} -f -s deb -t rpm -n ${NAME} -v ${VERSION} --url ${URL} \
     -m repos@osuosl.org --vendor "${VENDOR}" --license ${LICENSE} \
     --description "${DESCRIPTION}" --prefix /usr/bin --depends "php-cli" \
-    --no-auto-depends ${NAME}_${VERSION}_all.deb
+    --depends "php53u-process" --no-auto-depends ${NAME}_${VERSION}_all.deb
