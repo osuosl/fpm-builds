@@ -1,7 +1,7 @@
 #!/bin/bash
 NAME="moosh"
 REMOTEVERSION="0.15.2-2"
-VERSION=$REMOTEVERSION'osl1'
+VERSION=$REMOTEVERSION'osl2'
 URL="http://moosh-online.com/"
 VENDOR="OSU Open Source Lab"
 LICENSE="GPLv3"
@@ -19,4 +19,4 @@ wget http://ppa.launchpad.net/zabuch/ppa/ubuntu/pool/main/m/${NAME}/${NAME}_${RE
 ${FPM} -f -s deb -t rpm -n ${NAME} -v ${VERSION} --url ${URL} \
     -m repos@osuosl.org --vendor "${VENDOR}" --license ${LICENSE} \
     --description "${DESCRIPTION}" --prefix /usr/bin --depends "php-cli" \
-    --depends "php53u-process" --no-auto-depends ${NAME}_${REMOTEVERSION}_all.deb
+    --depends "php54u-process" --no-auto-depends ${NAME}_${REMOTEVERSION}_all.deb
